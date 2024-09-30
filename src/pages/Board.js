@@ -231,11 +231,8 @@ const Board = () => {
             if(response.data && response.data.statusCode === 200) {
                 console.log(response.data);
                 alert("정상적으로 수정되었습니다.");
-                uploadFiles = [];
-                changeFiles = [];
-                originFiles = [];
-                setBoard(() => response.data.item);
-                // window.location.reload();
+                
+                window.location.reload();
             }
         } catch(e) {
             alert('에러가 발생했습니다.');
