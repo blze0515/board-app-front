@@ -24,6 +24,7 @@ const Board = () => {
                     Authorization: `Bearer ${sessionStorage.getItem('ACCESS_TOKEN')}`
                 }
             });
+            console.log(response);
 
             setBoard(() => response.data.item);
         } catch(e) {
