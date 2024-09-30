@@ -6,7 +6,6 @@ import axios from 'axios';
 
 const Board = () => {
     const [board, setBoard] = useState(null);
-    const [fileList, setFileList] = useState([]);
 
     const {id} = useParams();
 
@@ -27,7 +26,6 @@ const Board = () => {
             });
 
             setBoard(() => response.data.item);
-            setFileList(() => response.data.item.boardFileDtoList);
         } catch(e) {
             alert('에러가 발생했습니다.');
         }
@@ -236,7 +234,6 @@ const Board = () => {
                 changeFiles = [];
                 originFiles = [];
                 setBoard(() => response.data.item);
-                setFileList(() => response.data.item.boardFileDtoList);
                 // window.location.reload();
             }
         } catch(e) {
@@ -444,7 +441,7 @@ const Board = () => {
                 <Grid item
                       xs={10}>
                     <Container component='div' name='preview' id='preview'>
-                        {fileList && fileList.map((boardFile, index) => (
+                        {board && board.boardFileDtoList.map((boardFile, index) => (
                             <div key={index}
                                  style={{
                                     display: 'inline-block',
