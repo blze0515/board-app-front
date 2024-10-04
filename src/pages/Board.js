@@ -19,7 +19,7 @@ const Board = () => {
 
     const findById = useCallback(async () => {
         try {
-            const response = await axios.get(`http://211.188.51.208:9090/boards/${id}`, {
+            const response = await axios.get(`https://211.188.51.208:9090/boards/${id}`, {
                 headers: {
                     Authorization: `Bearer ${sessionStorage.getItem('ACCESS_TOKEN')}`
                 }
@@ -38,7 +38,7 @@ const Board = () => {
     
     const deleteById = useCallback(async () => {
         try {
-            const resonse = await axios.delete(`http://211.188.51.208:9090/boards/${id}`, {
+            const resonse = await axios.delete(`https://211.188.51.208:9090/boards/${id}`, {
                 headers: {
                     Authorization: `Bearer ${sessionStorage.getItem('ACCESS_TOKEN')}`
                 }
@@ -222,7 +222,7 @@ const Board = () => {
 
     const modify = useCallback(async (formData) => {
         try {
-            const response = await axios.patch('http://211.188.51.208:9090/boards', formData, {
+            const response = await axios.patch('https://211.188.51.208:9090/boards', formData, {
                 headers: {
                     Authorization: `Bearer ${sessionStorage.getItem('ACCESS_TOKEN')}`
                 }
