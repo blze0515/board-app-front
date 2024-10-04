@@ -73,6 +73,10 @@ const Join = () => {
 
             const response = await axios.post('https://board-app-back.store/members/username-check', {
                 username: joinForm.username
+            }, {
+                httpsAgent: new https.Agent({
+                    rejectUnauthorized: false, // SSL 인증서 무시
+                }),
             });
 
             if(response.data.item.usernameCheckMsg === 'invalid username') {
