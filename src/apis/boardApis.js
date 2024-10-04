@@ -5,7 +5,7 @@ export const post = createAsyncThunk(
     'boards/post',
     async (formData, thunkApi) => {
         try {
-            const response = await axios.post('https://board-app-back.store:8443/boards', formData, {
+            const response = await axios.post('https://board-app-back.store/boards', formData, {
                 headers: {
                     Authorization: `Bearer ${sessionStorage.getItem('ACCESS_TOKEN')}`,
                     "Content-Type": "multipart/form-data"
@@ -23,7 +23,7 @@ export const getBoards = createAsyncThunk(
     'boards/getBoards',
     async(searchObj, thunkApi) => {
         try {
-            const response = await axios.get('https://board-app-back.store:8443/boards',  {
+            const response = await axios.get('https://board-app-back.store/boards',  {
                 headers: {
                     Authorization: `Bearer ${sessionStorage.getItem('ACCESS_TOKEN')}`
                 },

@@ -100,7 +100,7 @@ const Join = () => {
                 return;
             }
 
-            const response = await axios.post('https://board-app-back.store:8443/members/nickname-check', {
+            const response = await axios.post('https://board-app-back.store/members/nickname-check', {
                 nickname: joinForm.nickname
             });
 
