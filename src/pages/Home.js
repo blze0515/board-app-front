@@ -6,7 +6,10 @@ const Home = () => {
   }, []);
 
   return (
-    <div>게시판 홈</div>
+    <>
+      <div>게시판 홈</div>
+      <img src='/images/defaultFileImg.png'></img>
+    </>
   );
 };
 
