@@ -9,7 +9,7 @@ export const join = createAsyncThunk(
     'members/join',
     async (member, thunkApi) => {
         try {
-            const response = await axios.post('https://211.188.51.208:8443/members/join', member);
+            const response = await axios.post('https://board-app-back.store:8443/members/join', member);
 
             return response.data.item;
         } catch(e) {
@@ -22,7 +22,7 @@ export const login = createAsyncThunk(
     'members/login',
     async (member, thunkApi) => {
         try {
-            const response = await axios.post('https://211.188.51.208:8443/members/login', member);
+            const response = await axios.post('https://board-app-back.store:8443/members/login', member);
 
             return response.data.item;
         } catch(e) {
@@ -36,7 +36,7 @@ export const logout = createAsyncThunk(
     async (_, thunkApi) => {
         try {
             const response = await axios.get(
-                `https://211.188.51.208:8443/members/logout`,
+                `https://board-app-back.store:8443/members/logout`,
                 {
                     headers: {
                         Authorization: `Bearer ${sessionStorage.getItem('ACCESS_TOKEN')}`
